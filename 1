@@ -1,0 +1,27 @@
+if (operator === 'add') {
+    result = parseFloat(n1) + parseFloat(n2)
+  } else if (operator === 'subtract') {
+    result = parseFloat(n1) - parseFloat(n2)
+  } 
+  
+  
+  
+  if (action === 'calculate') {
+  		const firstValue = calculator.dataset.firstValue
+  		const operator = calculator.dataset.operator
+  		const secondValue = displayedNum
+
+         if( firstValue && secondValue && operator !== 'operator'){
+  		display.textContent = calculate(firstValue, operator, secondValue)        
+	    }    
+                calculator.dataset.previousKeyType = 'calculate'
+	}
+  
+  
+  
+  
+     if(action !== 'clear'){
+		const clearButton = calculator.querySelector('[data-action=clear]')
+		if(action === 'calculate'){clearButton.textContent = 'C'}
+		else {clearButton.textContent = 'CE'}
+	}
